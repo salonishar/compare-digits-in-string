@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void convertString(string str)
+{
+    string s1, s2;
+    s1 = str[0];
+    s2 = str[2];
+
+    // convert string elements to integer
+    int a = stoi(s1);
+    int b = stoi(s2);
+
+    // compare the integers and modify the operator accordingly
+    if (a > b)
+    {
+        str[1] = '>';
+    }
+    else if (a < b)
+    {
+        str[1] = '<';
+    }
+    else
+    {
+        str[1] = '=';
+    }
+
+    // output the modified string
+    cout << str << endl;
+}
+
+int main()
+{
+    // number of case tests
+
+    int t;
+    cout << "number of test cases : ";
+    cin >> t;
+    for (int i = 1; i <= t; i++)
+    {
+
+        string str;
+        cout << "enter a string in ('integer''operator''integer') format : ";
+        cin >> str;
+
+        // lets convert and operate on string
+        convertString(str);
+    }
+    return 0;
+}
